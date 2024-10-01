@@ -1,8 +1,5 @@
-properties([
-    pipelineTriggers([pollSCM('H/2 * * * *')])
-])
-
 node {
+    triggers { pollSCM 'H/1 * * * *' }
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
