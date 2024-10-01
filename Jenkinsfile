@@ -1,5 +1,5 @@
 node {
-    triggers { pollSCM 'H/1 * * * *' }
+    triggers { pollSCM 'H/2 * * * *' }
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
